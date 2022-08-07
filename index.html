@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Encriptador de texto</title>
+</head>
+
+<body>
+    <main>
+        <h1><img src="Imagenes/Logo.png" alt="Logo de Alura" class="logo"></h1>
+        <textarea cols="150" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptar" class="campo-texto"></textarea>
+
+        <section class="botones-advertencia">
+            <div>
+                <img src="Imagenes/Vector.png" alt="Advertencia">
+                <p>Solo letras minúsculas y sin acentos</p>
+            </div>
+
+            <div>
+                <input type="submit" value="Encriptar" class="button-encriptar">
+                <input type="submit" value="Desencriptar" class="button-desencriptar">
+            </div>
+        </section>
+    </main>
+
+    <aside class="rectangulo">
+        <textarea cols="10" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptado" class="campo-texto"></textarea>
+        <img src="Imagenes/Muñeco.png" alt="No ha encriptado ningún texto">
+        <h2>Ningún mensaje fue encontrado</h2>
+        <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        <input type="submit" value="Copiar" name="Copiar">
+    </aside>
+
+    <footer>
+        <p class="copyright"> &copy Copyright Casapaico Rivera, Angelo Paolo - 2022</p>
+    </footer>
+
+    <script>
+        var button = document.querySelector("input");
+        function fun() {
+            document.getElementsByClassName("button-desencriptar").style.visibility = "hidden";
+        }
+
+        button.onclick = fun;
+    </script>
+</body>
+
+</html>
