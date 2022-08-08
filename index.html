@@ -17,7 +17,8 @@
 <body>
     <main>
         <h1><img src="Imagenes/Logo.png" alt="Logo de Alura" class="logo"></h1>
-        <textarea cols="150" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptar" class="campo-texto"></textarea>
+        <textarea cols="150" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptar" class="campo-texto"
+            required></textarea>
 
         <section class="botones-advertencia">
             <div>
@@ -33,11 +34,17 @@
     </main>
 
     <aside class="rectangulo">
-        <textarea cols="10" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptado" class="campo-texto"></textarea>
-        <img src="Imagenes/Muñeco.png" alt="No ha encriptado ningún texto">
-        <h2>Ningún mensaje fue encontrado</h2>
-        <p>Ingresa el texto que desees encriptar o desencriptar</p>
-        <input type="submit" value="Copiar" name="Copiar">
+        <section class="rectangulo-vacio">
+            <img src="Imagenes/Muñeco.png" alt="No ha encriptado ningún texto" class="imagen">
+            <h2>Ningún mensaje fue encontrado</h2>
+            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        </section>
+
+        <section class="rectangulo-texto">
+            <textarea cols="10" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptado"
+                class="campo-texto"></textarea>
+            <input type="submit" value="Copiar" class="Copiar">
+        </section>
     </aside>
 
     <footer>
@@ -45,12 +52,20 @@
     </footer>
 
     <script>
-        var button = document.querySelector("input");
-        function fun() {
-            document.getElementsByClassName("button-desencriptar").style.visibility = "hidden";
+        var encriptarTexto = document.querySelector(".button-encriptar"), desencriptarTexto = document.querySelector(".button-desencriptar");
+        function encriptar() {
+            document.querySelector(".rectangulo-vacio").style.display = "none";
+            document.querySelector(".rectangulo-texto").style.display = "block";
         }
 
-        button.onclick = fun;
+        function desencriptar() {
+            document.querySelector(".rectangulo-vacio").style.display = "block";
+            document.querySelector(".rectangulo-texto").style.display = "none";
+        }
+
+        desencriptar();
+        encriptarTexto.onclick = encriptar;
+        desencriptarTexto.onclick =desencriptar;
     </script>
 </body>
 

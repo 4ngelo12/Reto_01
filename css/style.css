@@ -12,7 +12,7 @@ body {
     position: absolute;
     top: 150px;
     left: 150px;
-    width: 600px;
+    width: 750px;
 }
 
 .campo-texto {
@@ -80,8 +80,7 @@ div p {
     font-family: 'Montserrat', sans-serif;
 }
 
-.rectangulo img {
-    display: none;
+.imagen {
     position: relative;
     width: 85%;
     margin-left: 30px;
@@ -90,7 +89,6 @@ div p {
 
 .rectangulo h2,
 .rectangulo p {
-    display: none;
     position: relative;
     text-align: center;
     top: 200px;
@@ -98,11 +96,11 @@ div p {
 
 #texto-encriptado{
     width: 90%;
-    height: 75%;
+    height: 600px;
     margin: 25px 0 0 17px;
 }
 
-.rectangulo input {
+.Copiar {
     position: relative;
     margin-top: 60px;
     border-radius: 50px;
@@ -138,7 +136,29 @@ footer {
 @media screen and (max-width: 1280px) {
     .rectangulo {
         left: 850px;
+        width: 350px;
+        margin-left: 50px;
+    }
 
+    #texto-encriptar {
+        top: 150px;
+        left: 100px;
+        width: 600px;
+    }
+
+    .botones-advertencia {
+        bottom: 150px;
+        left: 100px;
+    }
+
+    .Copiar {
+        padding: 20px 130px;
+        left: 20px;
+        font-family: 'Inter', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        border-color: #466a96;
+        background-color: #D8DFE8;
     }
 }
 
