@@ -41,8 +41,7 @@
         </section>
 
         <section class="rectangulo-texto">
-            <textarea cols="10" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptado"
-                class="campo-texto"></textarea>
+            <textarea cols="10" rows="10" id="texto-encriptado" class="campo-texto"></textarea>
             <input type="submit" value="Copiar" class="Copiar">
         </section>
     </aside>
@@ -52,20 +51,59 @@
     </footer>
 
     <script>
-        var encriptarTexto = document.querySelector(".button-encriptar"), desencriptarTexto = document.querySelector(".button-desencriptar");
-        function encriptar() {
-            document.querySelector(".rectangulo-vacio").style.display = "none";
-            document.querySelector(".rectangulo-texto").style.display = "block";
-        }
+        var botonEncriptar = document.querySelector(".button-encriptar"), botonDesencriptar = document.querySelector(".button-desencriptar"),
+            botonCopiar = document.querySelector(".Copiar"), textoEncriptar = document.querySelector("#texto-encriptar"),
+            textoEncriptado = document.querySelector("#texto-encriptado");
 
-        function desencriptar() {
+        function inicio() {
             document.querySelector(".rectangulo-vacio").style.display = "block";
             document.querySelector(".rectangulo-texto").style.display = "none";
         }
 
-        desencriptar();
-        encriptarTexto.onclick = encriptar;
-        desencriptarTexto.onclick =desencriptar;
+        function encriptar() {
+            var texto = textoEncriptar.value, encriptar = "", caracteres = [], encrip = "";
+            for (var x of texto) {
+                encriptar += x;
+                var nuevo = encriptar.toLowerCase()
+                caracteres = nuevo.split("");
+            }
+
+            for (var i = 0; i <= caracteres.length; i++) {
+                if (caracteres[i] == "a") {
+                    caracteres[i] = "ai";
+                } else if (caracteres[i] == "e") {
+                    caracteres[i] = "enter";
+                } else if (caracteres[i] == "i") {
+                    caracteres[i] = "imes";
+                } else if (caracteres[i] == "o") {
+                    caracteres[i] = "ober";
+                } else if (caracteres[i] == "u") {
+                    caracteres[i] = "ufat";
+                }
+                encrip = caracteres.join("");
+            }
+
+            console.log(encrip);
+            document.querySelector(".rectangulo-vacio").style.display = "none";
+            document.querySelector(".rectangulo-texto").style.display = "block";
+            textoEncriptado.value = encrip;
+            textoEncriptar.value = "";
+        }
+
+        function Desencriptar() {
+            console.log(textoEncriptar.search("a"));
+        }
+
+        function copiar() {
+            var copiar = textoEncriptado;
+            copiar.select();
+            document.execCommand("copy");
+        }
+
+        inicio();
+        botonEncriptar.onclick = encriptar;
+        botonCopiar.onclick = copiar;
+        botonDesencriptar.onclick = Desencriptar;
     </script>
 </body>
 
