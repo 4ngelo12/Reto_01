@@ -53,8 +53,8 @@
     <script>
         var botonEncriptar = document.querySelector(".button-encriptar"), botonDesencriptar = document.querySelector(".button-desencriptar"),
             botonCopiar = document.querySelector(".Copiar"), textoEncriptar = document.querySelector("#texto-encriptar"),
-            textoEncriptado = document.querySelector("#texto-encriptado"), desencrip, validacion = false,
-            validar = document.querySelector("#texto-encriptar").onkeypress = validarDatos;
+            textoEncriptado = document.querySelector("#texto-encriptado"), desencrip, validacion = true,
+            validar = document.querySelector("#texto-encriptar");
 
         function inicio() {
             document.querySelector(".rectangulo-vacio").style.display = "block";
@@ -63,8 +63,7 @@
 
         function validarDatos() {
             var evento = window.event;
-            if ((evento.charCode >= "A".charCodeAt() && evento.charCode <= "Z".charCodeAt())
-                || (evento.charCode >= "a".charCodeAt() && evento.charCode <= "z".charCodeAt())) {
+            if (evento.charCode >= " ".charCodeAt() && evento.charCode <= "}".charCodeAt()) {
                 return validacion = true;
             }
             else {
@@ -82,7 +81,6 @@
                     encriptado = encriptar.toLowerCase()
                     caracteres = encriptado.split("");
                 }
-
                 for (var i = 0; i <= caracteres.length; i++) {
                     if (caracteres[i] == "a") {
                         caracteres[i] = "ai";
@@ -105,32 +103,25 @@
         }
 
         function Desencriptar() {
-            var nuevoTexto = textoEncriptar.value, textoDesencriptar, t;
+            var nuevoTexto = textoEncriptar.value, textoDesencriptar = [], text = "";
             if (validacion) {
                 for (var x of nuevoTexto) {
-                    if (x.indexOf("ai")) {
-                        t += x.replace("ai", "a");
+                    text += x;
+                    if (text.includes("ai")) {
+                        text = text.replace("ai", "a");
+                    } else if (text.includes("enter")) {
+                        text = text.replace("enter", "e");
+                    } else if (text.includes("imes")) {
+                        text = text.replace("imes", "i");
+                    } else if (text.includes("ober")) {
+                        text = text.replace("ober", "o");
+                    } else if (text.includes("ufat")) {
+                        text = text.replace("ufat", "u");
                     }
                 }
-
-                /*for (var i = 0; i <= desencrip.length; i++) {
-                    if (desencrip[i] == "ai") {
-                        desencrip[i] = "a";
-                    } else if (desencrip[i] == "enter") {
-                        desencrip[i] = "e";
-                    } else if (desencrip[i] == "imes") {
-                        desencrip[i] = "i";
-                    } else if (desencrip[i] == "ober") {
-                        desencrip[i] = "o";
-                    } else if (desencrip[i] == "ufat") {
-                        desencrip[i] = "u";
-                    }
-                    textoDesencriptar = desencrip.join("");
-                }*/
-                console.log(t);
                 document.querySelector(".rectangulo-vacio").style.display = "none";
                 document.querySelector(".rectangulo-texto").style.display = "block";
-                textoEncriptado.value = textoDesencriptar;
+                textoEncriptado.value = text;
                 textoEncriptar.value = "";
             }
         }
@@ -146,6 +137,7 @@
         botonEncriptar.onclick = encriptar;
         botonCopiar.onclick = copiar;
         botonDesencriptar.onclick = Desencriptar;
+        validar.onkeypress = validarDatos;
     </script>
 </body>
 
