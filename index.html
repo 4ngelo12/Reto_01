@@ -16,36 +16,38 @@
 </head>
 
 <body>
-    <main>
+    <header>
         <h1><img src="Imagenes/Logo.png" alt="Logo de Alura" class="logo"></h1>
-        <textarea cols="150" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptar" class="campo-texto"
-            required></textarea>
+    </header>
 
-        <section class="botones-advertencia">
-            <div class="advertencia">
-                <img src="Imagenes/Vector.png" alt="Advertencia">
-                <p>Solo letras minúsculas y sin acentos</p>
-            </div>
+    <div class="contenedor contenedor-principal">
+        <main>
+            <textarea cols="150" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptar" class="campo-texto"
+                required></textarea>
 
-            <div>
+            <div class="botones-advertencia">
+                <div class="advertencia">
+                    <p> <img src="Imagenes/Vector.png" alt="Advertencia"> Solo letras minúsculas y sin acentos</p>
+                </div>
+
                 <input type="submit" value="Encriptar" class="button-encriptar">
                 <input type="submit" value="Desencriptar" class="button-desencriptar">
             </div>
-        </section>
-    </main>
+        </main>
 
-    <aside class="rectangulo">
-        <section class="rectangulo-vacio">
-            <img src="Imagenes/Muñeco.png" alt="No ha encriptado ningún texto" class="imagen">
-            <h2>Ningún mensaje fue encontrado</h2>
-            <p>Ingresa el texto que desees encriptar o desencriptar</p>
-        </section>
+        <div class="rectangulo">
+            <section class="rectangulo-vacio">
+                <img src="Imagenes/Muñeco.png" alt="No ha encriptado ningún texto" class="imagen">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar</p>
+            </section>
 
-        <section class="rectangulo-texto">
-            <textarea cols="10" rows="10" id="texto-encriptado" class="campo-texto"></textarea>
-            <input type="submit" value="Copiar" class="Copiar">
-        </section>
-    </aside>
+            <div class="rectangulo-texto">
+                <textarea cols="10" rows="10" id="texto-encriptado" class="campo-texto"></textarea>
+                <input type="submit" value="Copiar" class="Copiar">
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p class="copyright"> &copy Copyright Casapaico Rivera, Angelo Paolo - 2022</p>
