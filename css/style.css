@@ -76,29 +76,32 @@ body {
     padding: 2rem 0;
     width: 85%;
     border-radius: 50px;
-    margin-top: 2rem;
+
     font-size: 2rem;
     border-color: #466a96;
 }
 
 .button-desencriptar {
     background-color: #D8DFE8;
+    margin-top: 2rem;
     color: #20528e;
 }
 
 .button-encriptar {
     background-color: #0A3871;
+    margin-top: 6rem;
     color: #fff;
 }
 
 @media (min-width: 768px) {
-
     .button-encriptar,
     .button-desencriptar {
         display: inline-block;
-        width: 35rem;
+        width: 30rem;
     }
+}
 
+@media (min-width: 1280px) { 
     .button-desencriptar {
         margin-left: 2rem;
     }
@@ -115,6 +118,8 @@ body {
 
 @media (min-width: 1024px) {
     .rectangulo {
+        margin-top: 0;
+        margin-left: 5rem;
         height: 80rem;
     }
 }
@@ -126,6 +131,8 @@ body {
 @media (min-width: 1024px) {
     .imagen {
         display: block;
+        margin: 15rem 1.5rem 5rem;
+        width: 90%;
     }
 }
 
