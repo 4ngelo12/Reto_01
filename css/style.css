@@ -36,6 +36,7 @@ body {
 
 #texto-encriptar {
     position: relative;
+    margin-top: 2rem;
     left: 4rem;
     width: 85%;
 }
@@ -145,7 +146,7 @@ body {
     margin-top: 5rem;
     font-size: 25px;
     font-weight: bold;
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
 }
 
 .rectangulo p {
@@ -155,16 +156,14 @@ body {
 
 #texto-encriptado {
     width: 90%;
-    height: 600px;
-    margin: 25px 0 0 17px;
+    height: 50rem;
+    margin: 2.5rem 0 0 1.7rem;
 }
 
 .Copiar {
-    position: relative;
-    margin-top: 60px;
     border-radius: 50px;
-    padding: 20px 130px;
-    left: 50px;
+    padding: 2rem 12rem;
+    margin: 2rem 4rem;
     font-size: 16px;
     border-color: #466a96;
     background-color: #D8DFE8;
@@ -176,6 +175,6 @@ footer {
 }
 
 .copyright {
-    padding: 20px;
-    margin-top: 75px;
+    padding: 2rem;
+    margin-top: 5rem;
 }

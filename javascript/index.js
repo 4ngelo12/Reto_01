@@ -6,6 +6,7 @@ var botonEncriptar = document.querySelector(".button-encriptar"), botonDesencrip
 function inicio() {
     document.querySelector(".rectangulo-vacio").style.display = "block";
     document.querySelector(".rectangulo-texto").style.display = "none";
+    
 }
 
 function validarDatos() {
@@ -44,6 +45,7 @@ function encriptar() {
         }
         document.querySelector(".rectangulo-vacio").style.display = "none";
         document.querySelector(".rectangulo-texto").style.display = "block";
+        document.querySelector(".rectangulo").style.height = "65rem";
         textoEncriptado.value = encrip;
         textoEncriptar.value = "";
     }
@@ -68,6 +70,7 @@ function Desencriptar() {
         }
         document.querySelector(".rectangulo-vacio").style.display = "none";
         document.querySelector(".rectangulo-texto").style.display = "block";
+        document.querySelector(".rectangulo").style.height = "65rem";
         textoEncriptado.value = text;
         textoEncriptar.value = "";
     }
