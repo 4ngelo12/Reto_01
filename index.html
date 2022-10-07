@@ -20,7 +20,7 @@
         <a href="index.html"><img src="Imagenes/Logo.png" alt="Logo de Alura" class="logo"></a>
     </header>
 
-    <div class="contenedor contenedor-principal">
+    <div class="contenedor contenedor-principal flex">
         <main>
             <textarea cols="150" rows="10" placeholder="Ingresa texto aquí" id="texto-encriptar" class="campo-texto"
                 required></textarea>
@@ -30,17 +30,19 @@
                     <p> <img src="Imagenes/Vector.png" alt="Advertencia"> Solo letras minúsculas y sin acentos</p>
                 </div>
 
-                <input type="submit" value="Encriptar" class="button-encriptar">
-                <input type="submit" value="Desencriptar" class="button-desencriptar">
+                <div class="botones flex">
+                    <input type="submit" value="Encriptar" class="button-encriptar">
+                    <input type="submit" value="Desencriptar" class="button-desencriptar">
+                </div>
             </div>
         </main>
 
         <div class="rectangulo">
-            <section class="rectangulo-vacio">
+            <div class="rectangulo-vacio">
                 <img src="Imagenes/Muñeco.png" alt="No ha encriptado ningún texto" class="imagen">
                 <h2>Ningún mensaje fue encontrado</h2>
                 <p>Ingresa el texto que desees encriptar o desencriptar</p>
-            </section>
+            </div>
 
             <div class="rectangulo-texto">
                 <textarea id="texto-encriptado" class="campo-texto"></textarea>
